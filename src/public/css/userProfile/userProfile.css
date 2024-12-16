@@ -1,0 +1,322 @@
+.section-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 70px;
+    gap: 50px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.tabs-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 50%;
+}
+
+.app {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
+
+.app:hover {
+    background-color: var(--secondcolor);
+    color: var(--textcolor);
+}
+
+.tabs-btns .group-1,
+.tabs-btns .group-2 {
+    padding: 12px;
+    background-color: var(--btncolor);
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-out button {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.btn-out button:hover {
+    background-color: var(--thirdcolor);
+    color: var(--textcolor);
+}
+
+.tabs-btns .group-2 {
+    background-color: var(--btncolor);
+}
+
+.tabs-btns .group-2:hover {
+    background-color: var(--thirdcolor);
+    color: var(--textcolor);
+}
+
+.group-2 {
+    margin-top: 10px;
+}
+
+.tabs-btns .group-1:hover {
+    background-color: var(--secondcolor);
+    color: var(--textcolor);
+}
+
+.btn-group {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid var(--btncolor);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body {
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.cita-body h3 {
+    color: var(--btncolor) !important;
+    font-size: 1.4rem !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 2.7rem;
+    color: var(--btncolor);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .texto {
+    color: var(--textcolor);
+    text-align: center;
+}
+
+.seccion-perfil-usuario .perfil-usuario-footer,
+.seccion-perfil-usuario .perfil-usuario-bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    width: 80%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.lista-datos {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.lista-datos li {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px; 
+    font-size: 16px;
+}
+
+.lista-datos i.icono {
+    margin-right: 10px; 
+    color: var(--btncolor); 
+    font-size: 18px;
+}
+
+.lista-datos span {
+    font-weight: bold; 
+    margin-left: 5px;
+    color: var(--btncolor);
+}
+
+.lista-citas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cita-item {
+    background-image: url(/assets/img/backgroung-pattern-1.png);
+    border-radius: 10px;
+    border: 1px solid var(--maincolor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cita-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cita-item p {
+    margin: 10px 0;
+    font-size: 1.7rem;
+    color: var(--textcolor);
+}
+
+.cita-item p strong {
+    color: var(--btncolor);
+}
+
+.cita-item .cita-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cita-item .cita-header h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--btncolor);
+    margin-top: 10px;
+}
+
+.cita-item .cita-header .cita-date {
+    font-size: 1.5rem;
+    color: var(--btncolor);
+}
+
+.cita-item .cita-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cita-item .cita-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.t {
+    color: var(--btncolor) !important;
+    font-size: 1.5rem !important;
+}
+
+
+.s{
+    color: var(--textcolor);
+}
+
+.cita-item .cita-footer .cita-price {
+    font-size: 1.2rem;
+    color: var(--btncolor);
+    font-weight: 500;
+}
+
+.cita-item .cita-footer .cita-type {
+    font-size: 1rem;
+    color: var(--btncolor);
+    font-weight: 700;
+}
+
+.cita-item .btn-link {
+    background-color: var(--btncolor);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cita-item .btn-link:hover {
+    background-color: var(--thirdcolor);
+}
+
+@media (max-width: 750px) {
+    .section-main {
+        flex-direction: column;
+    }
+
+    .tabs-btns {
+        width: 100%;
+    }
+
+    .btn-group {
+        margin-top: 20px;
+    }
+
+    .seccion-perfil-usuario .perfil-usuario-body {
+        width: 100%;
+    }
+
+    .seccion-perfil-usuario .lista-datos li {
+        width: 100%;
+    }
+
+    .cita-item {
+        width: 100%;
+    }
+}

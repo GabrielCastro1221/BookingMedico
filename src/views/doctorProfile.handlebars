@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="/css/doctorProfile/doctorProfile.css" />
+
+<section class="mt-13">
+  <div class="container">
+    <div id="content" class="grid">
+      <div class="tabs-btns">
+        <button class="group-1" data-target="profile">Mi perfil</button>
+        <button class="group-1" data-target="appointments">Mis citas</button>
+        <button class="group-1" data-target="edit-profile">Editar</button>
+      </div>
+
+      <div id="profile" class="profile tab-content">
+        <div class="profile-header">
+          <figure class="profile-image">
+            <img src="" alt="doctor imagen" id="doctor-photo" class="image" />
+          </figure>
+          <div class="profile-info" style="display: none;">
+            <span id="specialization" class="specialization"></span>
+            <h3 id="doctor-name" class="doctor-name"></h3>
+            <p id="bio" class="bio"></p>
+          </div>
+        </div>
+        <div class="tabs">
+          <button id="about-tab" class="tab"></button>
+        </div>
+        <div id="tab-content" class="tab-content">
+          <div class="info-container in">
+            <div class="info-section">
+              <h3 class="info-title">Acerca De
+                <span class="info-name"></span>
+              </h3>
+              <p class="info-about"></p>
+            </div>
+            <div class="container-cards">
+              <div class="education-section">
+                <h3 class="section-title">Educación</h3>
+                <ul class="education-list"></ul>
+              </div>
+              <div class="experience-section">
+                <h3 class="section-title">Experiencia</h3>
+                <ul class="experience-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="appointments" class="tab-content" style="display: none;">
+        <div class="card-body">
+          <div class="card"></div>
+        </div>
+      </div>
+
+      <div id="edit-profile" class="tab-content" style="display: none;">
+        {{> editDoctor}}
+      </div>
+
+      <div class="btn-out">
+        <button class="group-2 logout-button" data-target="cerrar">Cerrar sesión</button>
+        <button class="group-2 delete-button" data-target="eliminar">Eliminar Cuenta</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/js/doctorProfile/doctorProfile.js"></script>

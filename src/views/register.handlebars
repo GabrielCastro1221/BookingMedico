@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/css/register/register.css">
+
+<section class="section-padding mt-10 mb-8">
+    <div class="container">
+        <div class="grid">
+            <div class="form-container">
+                <h3 class="title">
+                    Crear una
+                    <span class="highlight">cuenta</span>
+                </h3>
+                <form class="form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ingresa tu nombre completo" class="input-field" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Ingresa tu Email" class="input-field" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" placeholder="Ingresa una Contraseña" class="input-field" required />
+                    </div>
+                    <div class="form-group flex-between">
+                        <label class="label">
+                            Eres un:
+                            <select name="role" class="select-field">
+                                <option value="paciente">Paciente</option>
+                                <option value="doctor">Doctor</option>
+                            </select>
+                        </label>
+                        <label class="label">
+                            Género:
+                            <select name="gender" class="select-field">
+                                <option value="">Seleccionar</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-group flex-gap">
+                        <figure class="image-preview">
+                            <img src="https://vineview.com/wp-content/uploads/2017/07/avatar-no-photo-300x300.png" class="preview" alt="Foto de usuario" />
+                        </figure>
+                        <div class="file-upload">
+                            <input type="file" name="photo" id="customFile" class="file-input" />
+                            <label for="customFile" class="file-label">
+                                Subir foto
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="submit-button">
+                            Registrarse
+                        </button>
+                    </div>
+                    <p class="text-center">
+                        ¿Ya tienes cuenta?
+                        <a href="/" class="link">Ingresar</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/register/register.js"></script>

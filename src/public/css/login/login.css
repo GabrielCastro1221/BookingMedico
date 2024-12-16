@@ -1,0 +1,81 @@
+.section-padding {
+    padding: 20px;
+}
+
+.container {
+    max-width: 570px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    color: var(--btncolor);
+    margin-left: 5px;
+}
+
+.form {
+    padding: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--btncolor);
+    border-radius: 5px;
+    font-size: 18px;
+    color: var(--btncolor);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: var(--btncolor);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--btncolor);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--secondcolor);
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--textcolor);
+    font-size: 1.3rem;
+}
+
+.link {
+    color: var(--btncolor);
+    font-weight: 500;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--secondcolor);
+}

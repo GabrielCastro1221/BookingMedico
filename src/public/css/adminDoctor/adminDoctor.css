@@ -1,0 +1,99 @@
+.doctor-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.doctor-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(30.333% - 40px);
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+.doctor-photo img {
+    width: 100%;
+    height: 200px;
+}
+
+.doctor-info {
+    padding: 20px;
+}
+
+.doctor-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--btncolor);
+}
+
+.doctor-info p {
+    margin: 5px 0;
+    color: var(--textcolor);
+}
+
+.doctor-info p strong {
+    color: var(--btncolor);
+}
+
+.btn-doctor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.deleteDoctor {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteDoctor:hover {
+    background-color: #cc0000;
+}
+
+.approveDoctor {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.approveDoctor:hover {
+    background-color: var(--secondcolor);
+}
+
+.cancelDoctor {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelDoctor:hover {
+    background-color: var(--secondcolor);
+}
+
+@media (max-width: 1024px) {
+    .doctor-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-card {
+        width: calc(100% - 40px);
+    }
+}

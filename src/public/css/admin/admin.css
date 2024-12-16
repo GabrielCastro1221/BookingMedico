@@ -1,0 +1,175 @@
+.section-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 70px;
+  gap: 50px;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.container {
+  width: 80%;
+}
+
+.tabs-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.tabs-btns .group-1,
+.tabs-btns .group-2 {
+  padding: 12px;
+  background-color: var(--btncolor);
+  color: white;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: -80px;
+}
+
+.btn-out button {
+  padding: 8px;
+  background-color: var(--btncolor);
+  color: white;
+  width: 30%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-out button:hover {
+  background-color: var(--thirdcolor);
+  color: var(--textcolor);
+}
+
+.tabs-btns .group-2 {
+  background-color: var(--btncolor);
+}
+
+.tabs-btns .group-2:hover {
+  background-color: var(--thirdcolor);
+  color: var(--textcolor);
+}
+
+.group-2 {
+  margin-top: 10px;
+}
+
+.tabs-btns .group-1:hover {
+  background-color: var(--secondcolor);
+  color: var(--textcolor);
+}
+
+.btn-group {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.user-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(30.333% - 40px);
+  text-align: center;
+  margin: 20px;
+}
+
+.user-photo img {
+  width: 100%;
+  height: 200px;
+}
+
+.user-info {
+  padding: 20px;
+}
+
+.user-info h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: var(--btncolor);
+}
+
+.user-info p {
+  margin: 5px 0;
+  color: var(--textcolor);
+}
+
+.user-info p strong {
+  color: var(--btncolor);
+}
+
+.btn-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.deleteUser {
+  padding: 8px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteUser:hover {
+  background-color: var(--secondcolor);
+  color: var(--textcolor);
+}
+
+.rolUser {
+  padding: 8px;
+  background-color: var(--btncolor);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rolUser:hover {
+  background-color: var(--secondcolor);
+  color: var(--textcolor);
+}
+
+@media (max-width: 1024px) {
+  .user-card {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .user-card {
+    width: calc(100% - 40px);
+  }
+}

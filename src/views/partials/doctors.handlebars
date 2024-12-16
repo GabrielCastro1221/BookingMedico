@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/doctors/doctors.css" />
+
+<div class="main-doctors">
+  <div class="doctors-heading">
+    <h2>Nuestro Equipo</h2>
+  </div>
+
+<section class="body-search">
+    <div class="search-container">
+        <form id="search-form" action="/buscar-doctor" method="get">
+            <input class="in" type="search" name="query" placeholder="Buscar Doctor">
+            <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</section>
+
+  <div class="main-inner-doctor">
+    {{#if doctors}}
+    {{#each doctors}}
+    <div class="doc-poster">
+      <div class="doc-icons">
+        <a href="/doctores/{{this._id}}">
+          <i class="fa-solid fa-eye"></i>
+        </a>
+      </div>
+      <img src="{{this.photo}}" alt="{{this.name}}" class="doc-photo" />
+      <div class="doc-details mb-3">
+        <h2>{{this.name}}</h2>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p class="message-error">{{message}}</p>
+    {{/if}}
+  </div>
+</div>
+
+<script src="/js/doctors/doctors.js"></script>

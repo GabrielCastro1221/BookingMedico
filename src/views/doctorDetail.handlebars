@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="/css/doctorDetail/doctorDetail.css" />
+
+<section class="mt-13">
+  <div class="container">
+    <div id="content" class="grid">
+      <div class="profile">
+        <div class="profile-header">
+          <figure class="profile-image">
+            <img src="{{doctor.photo}}" alt="doctor imagen" id="doctor-photo" class="image" />
+          </figure>
+          <div class="profile-info">
+            <span id="specialization" class="specialization">{{doctor.specialization}}</span>
+            <h3 id="doctor-name" class="doctor-name">{{doctor.name}}</h3>
+            <p id="bio" class="bio">{{doctor.bio}}</p>
+            <div class="mt-3 contact-btn">
+              <a class="contact-doctor-link" href="https://api.whatsapp.com/send?phone={{doctor.phone}}"><i class="fa-brands fa-whatsapp"></i>
+                Contactar Doctor</a>
+            </div>
+          </div>
+          <div id="side-panel" class="side-panel">
+            <div class="appointment-container">
+              <div class="appointment-panel">
+                <div class="price-container">
+                  <p class="price-text">${{doctor.ticket_price}} COP</p>
+                </div>
+                <select class="date-select">
+                  <option value="">Horarios Disponibles</option>
+                  {{#each doctor.timeSlots}}
+                  <option value="{{day}} {{startingTime}} - {{endingTime}}">
+                    {{day}}:
+                    {{startingTime}}
+                    -
+                    {{endingTime}}
+                  </option>
+                  {{/each}}
+                </select>
+                <input type="text" name="doctorId" value="{{doctor._id}}" id="doctorId" readonly
+                  style="display: none;" />
+                <input type="text" name="userId" id="userId" readonly style="display: none;" />
+                <div class="appointment-type">
+                  <label class="appointment-label">
+                    <input type="radio" name="appointmentType" value="presencial" />
+                    Cita presencial
+                  </label>
+                  <label class="appointment-label">
+                    <input type="radio" name="appointmentType" value="online" />
+                    Cita online
+                  </label>
+                </div>
+                <button type="submit" class="submit-button">
+                  Agendar cita
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button id="about-tab" class="tab"></button>
+        </div>
+        <div id="tab-content" class="tab-content">
+          <div class="info-container">
+            <div class="info-section">
+              <h3 class="info-title">
+                Acerca De
+                <span class="info-name">{{doctor.name}}</span>
+              </h3>
+              <p class="info-about" >{{doctor.about}}</p>
+            </div>
+            <div class="container-cards">
+              <div class="education-section">
+                <h3 class="section-title">Educación</h3>
+                <ul class="education-list">
+                  {{#each doctor.education}}
+                  <li class="education-item">
+                    <div>
+                      <span class="date">{{this.startingDate}}
+                        -
+                        {{this.endingDate}}</span>
+                      <span class="date">{{this.date}}</span>
+                      <p class="degree">{{this.degree}}</p>
+                    </div>
+                    <p class="university">{{this.university}}</p>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+              <div class="experience-section">
+                <h3 class="section-title">Experiencia</h3>
+                <ul class="experience-list">
+                  {{#each doctor.experiences}}
+                  <li class="experience-item">
+                    <div>
+                      <span class="date">{{this.startingDate}}
+                        -
+                        {{this.endingDate}}</span>
+                      <p class="position">{{this.position}}</p>
+                    </div>
+                    <p class="hospital">{{this.hospital}}</p>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/js/doctorDetail/doctorDetail.js"></script>

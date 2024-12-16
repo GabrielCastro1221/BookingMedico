@@ -1,0 +1,364 @@
+.container {
+    max-width: 1170px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+.profile {
+    grid-column: span 2;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.profile-image {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.image {
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+    border: 4px solid var(--btncolor);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.specialization {
+    background-color: #CCF0F3;
+    border: 1px solid var(--btncolor);
+    color: var(--btncolor);
+    margin-bottom: 20px;
+    margin-top: 14px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.doctor-name {
+    color: var(--btncolor);
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.bio {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--textcolor);
+    max-width: 390px;
+}
+
+.tabs {
+    margin-top: 50px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 50px;
+}
+
+.tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--btncolor);
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.tab.active {
+    border-bottom: 2px solid var(--btncolor);
+}
+
+.tab-content {
+    margin-top: 50px;
+}
+
+.side-panel {
+    grid-column: span 1;
+}
+
+.info-container {
+    padding: 20px;
+}
+
+.info-section,
+.education-section,
+.experience-section {
+    margin-top: 20px;
+    
+}
+
+.info-title {
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--textcolor);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: -60px;
+}
+
+.info-name {
+    color: var(--btncolor);
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.info-about {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--textcolor);
+}
+
+.education-title,
+.experience-title {
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--btncolor);
+    font-weight: 600;
+}
+
+.education-list,
+.experience-list {
+    padding-top: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.education-item,
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/assets/img/backgroung-pattern-1.png);
+    gap: 10px;
+    margin-bottom: 30px;
+    border: 1px solid var(--btncolor);
+}
+
+.education-item span,
+.experience-item span {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--btncolor);
+}
+
+.education-item p,
+.experience-item p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--textcolor);
+}
+
+.experience-item {
+    padding: 20px;
+    border: 1px solid var(--secondcolor);
+    background-color: #fff9ea;
+    border-radius: 5px;
+}
+
+.appointment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+.appointment-panel {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    max-width: 400px;
+    width: 100%;
+}
+
+.price-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.price-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--textcolor);
+    margin-bottom: 20px;
+}
+
+.date-select {
+    margin-top: 10px;
+    background-color: #e0f7fa;
+    border: 1px solid var(--btncolor);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.appointment-type {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.appointment-label {
+    display: flex;
+    gap: 10px;
+    text-transform: capitalize;
+    color: var(--btncolor);
+}
+
+.submit-button {
+    background-color: var(--btncolor);
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--secondcolor);
+}
+
+.container-cards {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--btncolor);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.education-list,
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.education-item,
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.date {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--btncolor);
+}
+
+.degree,
+.position {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--textcolor);
+}
+
+.university,
+.hospital {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: var(--textcolor);
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-doctor-link {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 7px;
+    font-size: 1.7rem;
+}
+
+.contact-doctor-link:hover {
+    background-color: var(--secondcolor);
+    color: var(--textcolor);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        margin: auto;
+        max-width: 450px;
+        max-height: 150px;
+    }
+
+    .specialization,
+    .doctor-name,
+    .average-rating,
+    .bio {
+        font-size: 14px;
+    }
+
+    .tabs {
+        margin-top: 30px;
+    }
+
+    .tab {
+        font-size: 14px;
+    }
+
+    .side-panel {
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .profile-info {
+        margin-top: 150px;
+    }
+}

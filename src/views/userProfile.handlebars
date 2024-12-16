@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/userProfile/userProfile.css">
+
+<section class="section-main">
+    <div class="tabs-btns"></div>
+
+    <div class="profile-content" id="profile">
+        <section class="seccion-perfil-usuario">
+            <div class="perfil-usuario-header">
+                <div class="perfil-usuario-portada">
+                    <div class="perfil-usuario-avatar"></div>
+                </div>
+            </div>
+
+            <div class="perfil-usuario-body">
+                <div class="perfil-usuario-footer ct">
+                <div class="perfil-usuario-bio" style="display: none;"></div>
+                    <ul class="lista-datos"></ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="profile-content " id="citas"></div>
+    
+    <div class="profile-content" id="editar">
+        {{> editUser}}
+    </div>
+</section>
+
+<div class="btn-out">
+    <button class="group-2 logout-button" data-target="cerrar">Cerrar sesión</button>
+    <button class="group-2 delete-button" data-target="eliminar">Eliminar Cuenta</button>
+</div>
+
+<script src="/js/userProfile/userProfile.js"></script>

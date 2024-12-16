@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/css/admin/admin.css" />
+
+<section class="section-main mt-13">
+    <div class="container">
+        <div id="content" class="grid">
+            <div class="tabs-btns">
+                <button class="group-1" data-target="users">Usuarios</button>
+                <button class="group-1" data-target="doctors">Doctores</button>
+            </div>
+        </div>
+        <div class="tab-content" id="users">{{> adminUsers}}</div>
+        <div class="tab-content" id="doctors">{{> adminDoctors}}</div>
+    </div>
+
+    <div class="btn-out">
+    <button class="group-2 logout-button" data-target="cerrar">Cerrar sesión</button>
+</div>
+</section>
+
+<script src="/js/admin/admin.js"></script>

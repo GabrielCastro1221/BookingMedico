@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/login/login.css">
+
+<section class="section-padding mt-13 mb-8">
+    <div class="container">
+        <h3 class="title welcome-text">
+            Olvidate tu Contraseña
+        </h3>
+        <form action="/api/v1/auth/requestPasswordReset" method="POST" class="form">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Ingrese su Email" class="input-field" required />
+            </div>
+            <div>
+                <button type="submit" class="submit-button">
+                    Enviar correo
+                </button>
+            </div>
+        </form>
+         {{#if error}}
+        <p style="color: red;">{{ error }}</p>
+        {{/if}}
+    </div>
+</section>

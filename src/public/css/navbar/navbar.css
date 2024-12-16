@@ -1,0 +1,148 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2%;
+    width: 100%;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    z-index: 1000;
+    background-color: white !important;
+}
+
+.logo {
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--textcolor);
+    font-size: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: var(--textcolor);
+    font-size: 1.7rem;
+    margin: 1rem;
+    position: relative;
+    transition: 0.5s;
+}
+
+.navbar a:hover {
+    color: var(--btncolor);
+}
+
+.navbar a::after {
+    content: "";
+    background-color: var(--btncolor);
+    width: 0;
+    position: absolute;
+    height: 0.2rem;
+    left: 0;
+    margin-top: 0.5rem;
+    top: 100%;
+    transition: 0.5s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+#menu-bars {
+    color: var(--textcolor);
+    font-size: 2.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    display: none;
+}
+
+#menu-bars:hover {
+    color: var(--btncolor);
+}
+
+.right-icons {
+    display: flex;
+    align-items: center;
+}
+
+.right-icons .btn {
+    padding: 1.2rem 2rem;
+    font-size: 1.7rem;
+    background: var(--btncolor);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    border-radius: 7px;
+}
+
+.right-icons .btn:hover {
+    background-color: var(--secondcolor);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    #menu-bars {
+        display: block;
+    }
+
+    .right-icons {
+        flex-direction: row;
+    }
+
+    .right-icons .btn {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 300px) {
+    header {
+        padding: 1rem 5%;
+    }
+
+    .navbar a {
+        font-size: 1.2rem;
+        margin: 0.5rem;
+    }
+
+    .right-icons .btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    #menu-bars {
+        font-size: 2rem;
+    }
+}
