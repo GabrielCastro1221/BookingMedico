@@ -46,8 +46,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p><strong>Precio de la Cita:</strong> ${
               doctor.ticket_price || "N/A"
             }</p>
-            <p><strong>Biografía:</strong> ${doctor.bio || "N/A"}</p>
-            <p><strong>Acerca de:</strong> ${doctor.about || "N/A"}</p>
             <p><strong>Especialización:</strong> ${
               doctor.specialization || "N/A"
             }</p>

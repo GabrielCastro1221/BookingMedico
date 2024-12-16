@@ -17,7 +17,7 @@
 .profile-header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -36,6 +36,7 @@
 .profile-info {
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 
 .specialization {
@@ -44,6 +45,7 @@
     color: var(--btncolor);
     margin-bottom: 20px;
     margin-top: 14px;
+    margin: auto;
     width: 100%;
     text-align: center;
     padding: 10px;
@@ -102,7 +104,7 @@
 .education-section,
 .experience-section {
     margin-top: 20px;
-    
+
 }
 
 .info-title {
@@ -113,7 +115,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: -60px;
+    margin-top: -10px;
 }
 
 .info-name {
@@ -128,6 +130,16 @@
     font-size: 16px;
     font-weight: 500;
     color: var(--textcolor);
+}
+
+.about {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--textcolor);
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .education-title,

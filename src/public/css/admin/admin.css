@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 70px;
   gap: 50px;
@@ -91,7 +92,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 5px;
 }
 
 .user-card {
@@ -99,7 +100,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: calc(30.333% - 40px);
+  width: calc(33.333%);
   text-align: center;
   margin: 20px;
 }

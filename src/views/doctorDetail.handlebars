@@ -13,7 +13,8 @@
             <h3 id="doctor-name" class="doctor-name">{{doctor.name}}</h3>
             <p id="bio" class="bio">{{doctor.bio}}</p>
             <div class="mt-3 contact-btn">
-              <a class="contact-doctor-link" href="https://api.whatsapp.com/send?phone={{doctor.phone}}"><i class="fa-brands fa-whatsapp"></i>
+              <a class="contact-doctor-link" href="https://api.whatsapp.com/send?phone={{doctor.phone}}"><i
+                  class="fa-brands fa-whatsapp"></i>
                 Contactar Doctor</a>
             </div>
           </div>
@@ -58,14 +59,9 @@
           <button id="about-tab" class="tab"></button>
         </div>
         <div id="tab-content" class="tab-content">
+          <p class="info-title">Acerca de <span class="info-name">{{doctor.name}}</span></p>
           <div class="info-container">
-            <div class="info-section">
-              <h3 class="info-title">
-                Acerca De
-                <span class="info-name">{{doctor.name}}</span>
-              </h3>
-              <p class="info-about" >{{doctor.about}}</p>
-            </div>
+            <p class="about">{{doctor.about}}</p>
             <div class="container-cards">
               <div class="education-section">
                 <h3 class="section-title">Educación</h3>

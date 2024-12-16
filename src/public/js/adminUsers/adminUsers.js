@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 user.blood_type || "N/A"
               }</p>
               <p><strong>Reservas:</strong> ${user.booking.length}</p>
-              <button class="delete-button deleteUser" data-id="${
+              <button class="delete-button btn-red deleteUser" data-id="${
                 user._id
               }">Eliminar</button>
-              <button class="change-role-button rolUser" data-id="${
+              <button class="change-role-button btn-rol rolUser" data-id="${
                 user._id
               }">Cambiar Rol</button>
             </div>

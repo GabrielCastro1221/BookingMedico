@@ -3,18 +3,17 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 5px;
 }
 
 .doctor-card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: calc(30.333% - 40px);
+    width: calc(33.333%);
     text-align: center;
     margin: 20px;
-    transition: transform 0.3s ease;
 }
 
 
@@ -95,5 +94,11 @@
 @media (max-width: 768px) {
     .doctor-card {
         width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 485px) {
+    .btn-doctor {
+        flex-direction: column;
     }
 }

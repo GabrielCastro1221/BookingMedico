@@ -84,14 +84,13 @@ header {
 }
 
 .right-icons .btn {
-    padding: 1.2rem 2rem;
-    font-size: 1.7rem;
+    padding: 1rem 1.5rem;
+    font-size: 12px;
     background: var(--btncolor);
     color: white;
-    text-decoration: none;
     cursor: pointer;
     margin-left: 1rem;
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .right-icons .btn:hover {

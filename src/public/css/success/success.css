@@ -21,7 +21,7 @@
 h1 {
     font-size: 36px;
     margin: 0;
-    color: var(--maincolor);
+    color: var(--btncolor);
 }
 
 p {
@@ -34,7 +34,7 @@ p {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: var(--maincolor);
+    background-color: var(--btncolor);
     color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
