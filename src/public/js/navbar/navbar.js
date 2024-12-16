@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   if (user) {
-    authButton.textContent = user.name;
+    authButton.textContent = "Mi Perfil";
     if (user.role === "doctor") {
       authButton.href = "/perfil-doctor";
     } else if (user.role === "paciente") {
