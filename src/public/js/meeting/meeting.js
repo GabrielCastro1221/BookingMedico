@@ -36,6 +36,12 @@ async function initMeeting() {
       await client.subscribe(user, mediaType);
       console.log("Usuario publicado:", user.uid);
 
+      if (mediaType === "audio") {
+        const remoteAudioTrack = user.audioTrack;
+        remoteAudioTrack.play();
+        console.log("Audio remoto reproducido");
+      }
+      
       if (mediaType === "video") {
         const remoteVideoTrack = user.videoTrack;
         remoteVideoTrack.play(remoteVideo);
