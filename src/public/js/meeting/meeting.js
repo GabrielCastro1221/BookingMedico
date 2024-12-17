@@ -1,122 +1,103 @@
-const APP_ID = "12bf0562227b4f709a09cbbde985a24e"; // Reemplaza con tu APP_ID real
-const CHANNEL_NAME = "video_consulta"; // Nombre del canal
-const SERVER_API_URL = "/api/v1/agora/generate-token"; // Endpoint para generar token
+const APP_ID = "12bf0562227b4f709a09cbbde985a24e";
+const CHANNEL_NAME = "video_consulta";
 
-let client = null; // Cliente de Agora
-let localVideoTrack = null; // Video local
-let localAudioTrack = null; // Audio local
-let isMuted = false; // Estado del micrófono
-let isVideoOff = false; // Estado del video
+let client = null;
+let localVideoTrack = null;
+let localAudioTrack = null;
+let localStream = null;
+let isMuted = false;
+let isVideoOff = false;
 
-const localVideoContainer = document.getElementById("localVideo");
-const remoteVideoContainer = document.getElementById("remoteVideo");
+const localVideo = document.getElementById("localVideo");
+const remoteVideo = document.getElementById("remoteVideo");
 const muteButton = document.querySelector(".btn-silence i");
 const videoButton = document.querySelector(".btn-rec i");
+const localVideoContainer = document.querySelector(".local-video");
 
 async function initMeeting() {
   try {
-    // 1. Generar el token desde el servidor
-    const response = await fetch(SERVER_API_URL, {
+    const response = await fetch(`/api/v1/agora/generate-token`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ channelName: CHANNEL_NAME }),
     });
     const data = await response.json();
-
-    if (!data.status) throw new Error("Error al obtener el token");
     const token = data.token;
 
-    // 2. Crear el cliente de Agora
     client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
+    const uid = Math.floor(Math.random() * 10000);
 
-    // 3. Unir al canal con el token generado
-    const uid = Math.floor(Math.random() * 10000); // ID único para el usuario
     await client.join(APP_ID, CHANNEL_NAME, token, uid);
-    console.log("Conectado al canal:", CHANNEL_NAME);
+    console.log("Conectado al canal");
 
-    // 4. Capturar audio y video local usando Agora
-    localVideoTrack = await AgoraRTC.createCameraVideoTrack();
-    localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
+    client.on("user-published", async (user, mediaType) => {
+      await client.subscribe(user, mediaType);
+      console.log("Usuario publicado:", user.uid);
 
-    // 5. Reproducir el video local en el contenedor
-    localVideoTrack.play(localVideoContainer);
+      if (mediaType === "video") {
+        const remoteVideoTrack = user.videoTrack;
+        remoteVideoTrack.play(remoteVideo);
+      }
+    });
 
-    // 6. Publicar los tracks en el canal
+    client.on("user-unpublished", (user) => {
+      console.log("Usuario no publicado:", user.uid);
+      remoteVideo.srcObject = null;
+    });
+
+    localStream = await navigator.mediaDevices.getUserMedia({
+      video: true,
+      audio: true,
+    });
+    localVideo.srcObject = localStream;
+
+    localVideoTrack = AgoraRTC.createCustomVideoTrack({
+      mediaStreamTrack: localStream.getVideoTracks()[0],
+    });
+    localAudioTrack = AgoraRTC.createCustomAudioTrack({
+      mediaStreamTrack: localStream.getAudioTracks()[0],
+    });
+
     await client.publish([localVideoTrack, localAudioTrack]);
-    console.log("Audio y video local publicados en el canal");
 
-    // 7. Escuchar la publicación de otros usuarios remotos
-    client.on("user-published", handleUserPublished);
-
-    // 8. Escuchar cuando un usuario remoto deja de publicar
-    client.on("user-unpublished", handleUserUnpublished);
+    console.log("Video y audio local publicados");
   } catch (error) {
     console.error("Error al inicializar la reunión:", error);
   }
 }
 
-// Función para manejar la publicación de un usuario remoto
-async function handleUserPublished(user, mediaType) {
-  console.log("Usuario publicado:", user.uid);
-
-  // Suscribirse a los tracks publicados (audio o video)
-  await client.subscribe(user, mediaType);
-
-  if (mediaType === "video") {
-    const remoteVideoTrack = user.videoTrack;
-    remoteVideoTrack.play(remoteVideoContainer);
-  } else if (mediaType === "audio") {
-    const remoteAudioTrack = user.audioTrack;
-    remoteAudioTrack.play(); // Reproducir el audio remoto
-  }
-}
-
-// Función para manejar la despublicación de un usuario remoto
-function handleUserUnpublished(user) {
-  console.log("Usuario no publicado:", user.uid);
-  remoteVideoContainer.innerHTML = ""; // Limpiar el contenedor de video remoto
-}
-
-// Función para alternar el micrófono
 function toggleMute() {
-  if (localAudioTrack) {
-    isMuted = !isMuted;
-    localAudioTrack.setEnabled(!isMuted);
-
-    if (isMuted) {
-      muteButton.classList.remove("fa-microphone");
-      muteButton.classList.add("fa-microphone-slash");
-    } else {
-      muteButton.classList.remove("fa-microphone-slash");
-      muteButton.classList.add("fa-microphone");
-    }
+  if (isMuted) {
+    localAudioTrack.setEnabled(true);
+    muteButton.classList.remove("fa-microphone-slash");
+    muteButton.classList.add("fa-microphone");
+  } else {
+    localAudioTrack.setEnabled(false);
+    muteButton.classList.remove("fa-microphone");
+    muteButton.classList.add("fa-microphone-slash");
   }
+  isMuted = !isMuted;
 }
 
-// Función para alternar el video
 function toggleVideo() {
-  if (localVideoTrack) {
-    isVideoOff = !isVideoOff;
-    localVideoTrack.setEnabled(!isVideoOff);
-
-    if (isVideoOff) {
-      videoButton.classList.remove("fa-video");
-      videoButton.classList.add("fa-video-slash");
-      localVideoContainer.style.display = "none";
-    } else {
-      videoButton.classList.remove("fa-video-slash");
-      videoButton.classList.add("fa-video");
-      localVideoContainer.style.display = "block";
-    }
+  if (isVideoOff) {
+    localVideoTrack.setEnabled(true);
+    localVideoContainer.style.display = "block";
+    videoButton.classList.remove("fa-video-slash");
+    videoButton.classList.add("fa-video");
+  } else {
+    localVideoTrack.setEnabled(true);
+    localVideoContainer.style.display = "none";
+    videoButton.classList.remove("fa-video");
+    videoButton.classList.add("fa-video-slash");
   }
+  isVideoOff = !isVideoOff;
 }
 
-// Configurar eventos de botones
+document.addEventListener("DOMContentLoaded", initMeeting);
 document.addEventListener("DOMContentLoaded", () => {
-  // Iniciar la reunión
-  initMeeting();
-
-  // Configurar botones de mute y video
   const silenceButton = document.querySelector(".btn-silence");
   const videoButtonContainer = document.querySelector(".btn-rec");
 
